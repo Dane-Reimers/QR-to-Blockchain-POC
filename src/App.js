@@ -31,8 +31,7 @@ class App extends Component {
     //let network = "rinkeby";
     //let network = "homestead";
 
-    let infuraAPIKey = await process.env.REACT_APP_INFURA_KEY;
-    console.log(infuraAPIKey)
+    let infuraAPIKey = process.env.REACT_APP_INFURA_KEY;
 
     //let provider = new providersJsonRpcProvider(network, 'homestead');
     let provider = new providers.InfuraProvider(network, infuraAPIKey);
