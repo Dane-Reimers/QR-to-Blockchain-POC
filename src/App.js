@@ -22,7 +22,7 @@ class App extends Component {
     const providers = ethers.providers; 
 
     //Note the "0x" appended at the start
-    let privateKey = process.env.serverWalletKey;
+    let privateKey = process.env.REACT_APP_SERVER_WALLET_KEY;
 
     let network = "ropsten";
 
@@ -31,7 +31,8 @@ class App extends Component {
     //let network = "rinkeby";
     //let network = "homestead";
 
-    let infuraAPIKey = process.env.infuraAPIKey;
+    let infuraAPIKey = await process.env.REACT_APP_INFURA_KEY;
+    console.log(infuraAPIKey)
 
     //let provider = new providersJsonRpcProvider(network, 'homestead');
     let provider = new providers.InfuraProvider(network, infuraAPIKey);
